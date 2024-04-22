@@ -3,7 +3,7 @@ from typing import Tuple
 
 def DT_TOKEN() -> str:
     # TODO: change this to your duckietown token
-    dt_token = "PUT_YOUR_TOKEN_HERE"
+    dt_token = "dt1-3nT7FDbT7NLPrXykNJmqqh1v38tTgbghbGute7CkQwGdzNg-43dzqWFnWd8KBa1yev1g3UKnzVxZkkTbfTtHCQUi4QqwmY3xW4CZUwR6VaRsCvvbHf"
     return dt_token
 
 
@@ -37,7 +37,9 @@ def filter_by_classes(pred_class: int) -> bool:
     # Right now, this returns True for every object's class
     # TODO: Change this to only return True for duckies!
     # In other words, returning False means that this prediction is ignored.
-    return True
+    if pred_class == 0:
+        return True
+    return False
 
 
 def filter_by_scores(score: float) -> bool:
